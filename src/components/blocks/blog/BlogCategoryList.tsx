@@ -26,7 +26,7 @@ export default function BlogCategoryList({
         <span className="ml-3">Categories</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Check out our different blog categories. We're sure you'll find
+        Check out our different blog categories. We&aposre sure you&aposll find
         something you like.
       </p>
       <div className="mt-6">
