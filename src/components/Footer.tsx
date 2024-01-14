@@ -22,12 +22,12 @@ function NavLink({
 
 export function Footer({ footerNav }: { footerNav: ContentData }) {
   return (
-    <footer className="mt-32 flex-none bg-[#3F3C47]">
+    <footer className="mt-32 flex-none bg-[#3F3C47] dark:bg-[#F2EEE9]">
       <ContainerOuter>
-        <div className="pb-16  pt-10">
+        <div className="pb-16 pt-10">
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-white">
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-white dark:text-black">
                 {footerNav.fields.footer_links.blocks.map(
                   (item: BlockData, index: number) => {
                     return (
@@ -41,7 +41,7 @@ export function Footer({ footerNav }: { footerNav: ContentData }) {
                   },
                 )}
               </div>
-              <p className="text-sm text-white dark:text-white">
+              <p className="text-sm text-white dark:text-black">
                 &copy; {new Date().getFullYear()} Remote Dev Diaries. All rights
                 reserved.
               </p>

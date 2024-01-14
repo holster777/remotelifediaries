@@ -39,7 +39,7 @@ export default async function RootLayout({
       className={`${courier.className} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex h-full bg-[#F2EEE9] dark:bg-black">
+      <body className="flex h-full bg-[#F2EEE9] dark:bg-[#3F3C47]">
         <Providers>
           <div className="flex w-full">
             <GeneralLayout mainNav={mainNav} footerNav={footerNav}>

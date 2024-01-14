@@ -1,9 +1,7 @@
 'use client'
 
 import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
 import { ContentData } from '@gocontento/client'
-import AnnouncementBar from '../AnnouncementBar'
 import HeaderNew from '../HeaderNew'
 
 export function GeneralLayout({
