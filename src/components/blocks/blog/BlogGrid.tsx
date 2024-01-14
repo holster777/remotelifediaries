@@ -4,6 +4,7 @@ import BlogCard from './BlogCard'
 import Newsletter from '../Newsletter'
 import BlogCategoryList from './BlogCategoryList'
 import { CategoryLink } from '@/types'
+import { instrumentSerif } from '@/styles/fonts'
 
 export default function BlogGrid({
   block,
@@ -16,7 +17,9 @@ export default function BlogGrid({
 }) {
   return (
     <Container className="my-9 px-6">
-      <h2 className="text-3xl font-bold">{block.fields.title.text}</h2>
+      <h2 className={`text-5xl font-bold ${instrumentSerif.className}`}>
+        {block.fields.title.text}
+      </h2>
       {block.fields.text.text && <p>{block.fields.text.text}</p>}
       <div className="mx-auto mt-9 grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
         <div className="flex flex-col gap-y-16 lg:col-span-2">

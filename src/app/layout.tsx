@@ -4,6 +4,7 @@ import '@/styles/tailwind.css'
 import { GeneralLayout } from '@/components/layouts/GeneralLayout'
 import { createClient } from '@/lib/contento'
 import { notFound } from 'next/navigation'
+import { courier } from '@/styles/fonts'
 
 export const metadata: Metadata = {
   title: {
@@ -33,8 +34,12 @@ export default async function RootLayout({
     })
 
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+    <html
+      lang="en"
+      className={`${courier.className} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body className="flex h-full bg-[#F2EEE9] dark:bg-black">
         <Providers>
           <div className="flex w-full">
             <GeneralLayout mainNav={mainNav} footerNav={footerNav}>

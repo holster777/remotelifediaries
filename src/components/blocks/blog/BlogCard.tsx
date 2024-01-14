@@ -1,5 +1,6 @@
 import ChevronRightIcon from '@/images/ChevronIconRight'
 import { formatDate } from '@/lib/formatDate'
+import { instrumentSerif } from '@/styles/fonts'
 import { ContentData } from '@gocontento/client'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,20 +10,24 @@ export default function BlogCard({ post }: { post: ContentData }) {
 
   return (
     <div className="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6 md:space-y-0">
-      <Image
-        src={post.fields.image.assets[0].asset.url}
-        alt=""
-        className="h-72 w-full flex-shrink-0 rounded-xl object-cover sm:rounded-2xl md:h-44 md:w-44"
-        width={100}
-        height={100}
-      />
+      <div className="h-72 w-full flex-shrink-0 bg-white p-3 dark:bg-white md:h-44 md:w-44">
+        <Image
+          src={post.fields.image.assets[0].asset.url}
+          alt=""
+          className="h-full w-full object-cover"
+          width={100}
+          height={100}
+        />
+      </div>
 
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
           <article className="md:grid md:grid-cols-4 md:items-baseline">
             <div className="group relative flex flex-col items-start md:col-span-3">
               <Link href={`/blog/${post.slug}`}>
-                <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                <h3
+                  className={`text-4xl tracking-tight text-zinc-800 dark:text-zinc-100 ${instrumentSerif.className}`}
+                >
                   {post.fields.title.text}
                 </h3>
               </Link>

@@ -13,7 +13,7 @@ export default function Photos({ block }: { block: BlockData }) {
             <div
               key={`image-${index}`}
               className={clsx(
-                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                'relative flex aspect-[9/10] w-44 flex-none items-center justify-center overflow-hidden bg-white px-3 pb-9 pt-3 drop-shadow-md dark:bg-[#f7f7f7] sm:w-72',
                 rotations[index % rotations.length],
               )}
             >
@@ -21,7 +21,7 @@ export default function Photos({ block }: { block: BlockData }) {
                 src={image.asset.url}
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="h-full w-full object-cover"
                 width={176}
                 height={176}
               />
