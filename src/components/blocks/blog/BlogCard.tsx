@@ -30,7 +30,7 @@ export default function BlogCard({ post }: { post: ContentData }) {
                   {post.fields.title.text}
                 </h3>
               </Link>
-              <p className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500">
+              <p className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-600 dark:text-zinc-200">
                 {formatDate(post.published_at)}{' '}
                 <span className="px-2 pb-[2px]">|</span>
                 {category.fields.title.text}
@@ -42,7 +42,7 @@ export default function BlogCard({ post }: { post: ContentData }) {
               <Link
                 href={`/blog/${post.slug}`}
                 aria-hidden="true"
-                className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+                className="relative z-10 mt-4 flex items-center text-sm font-bold text-zinc-800 dark:text-zinc-200"
               >
                 Read Me
                 <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />

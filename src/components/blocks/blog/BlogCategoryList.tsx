@@ -16,19 +16,18 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export default function BlogCategoryList({
   categoryLinks,
+  text,
 }: {
   categoryLinks: CategoryLink[] | undefined
+  text: string
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 md:max-w-2xl">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <ArrowDownIcon className="h-6 w-6 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+    <div className="border-t-8 border-[#AEA2E8] bg-white p-6 dark:border-[#AEA2E8] md:max-w-2xl">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-600">
+        <ArrowDownIcon className="h-6 w-6 stroke-zinc-600 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         <span className="ml-3">Categories</span>
       </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Check out our different blog categories. We&aposre sure you&aposll find
-        something you like.
-      </p>
+      <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-600">{text}</p>
       <div className="mt-6">
         <CategoryPills categoryLinks={categoryLinks} />
       </div>

@@ -32,7 +32,11 @@ export default function BlogGrid({
             title="Stay up to date"
             text="Get notified when we post something new, unsubsribe at any time."
           />
-          <BlogCategoryList categoryLinks={categoryLinks} />
+          <BlogCategoryList
+            categoryLinks={categoryLinks}
+            text="Check out our different blog categories. We're sure you'll find
+        something you like."
+          />
         </div>
       </div>
     </Container>
