@@ -28,7 +28,7 @@ export default function BlogCategoryPage({
       </header>
       <div className="mt-9 space-y-10">
         {posts.map((post, index) => (
-          <BlogCard key={`blog-post-${index}`} post={post} />
+          <BlogCard key={`blog-post-${index}`} post={post} grid={1} />
         ))}
       </div>
     </Container>
