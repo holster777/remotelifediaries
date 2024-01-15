@@ -24,7 +24,7 @@ export default function BlogIndexPage({
     <Container className="mt-9 px-6 md:px-0">
       <header>
         <div className="grid space-x-10 md:grid-cols-2">
-          <div className="hidden h-[400px] bg-white px-4 py-4 md:block">
+          <div className="hidden h-[400px] bg-white px-4 py-4 md:mr-6 md:block">
             <Image
               src={content.fields.image.assets[0].asset.url}
               alt={content.fields.image.assets[0].asset.description}
