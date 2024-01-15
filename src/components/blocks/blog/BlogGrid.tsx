@@ -24,7 +24,7 @@ export default function BlogGrid({
       <div className="mx-auto mt-9 grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
         <div className="flex flex-col gap-y-16 lg:col-span-2">
           {posts?.map((post, index) => {
-            return <BlogCard key={`blog-post-${index}`} post={post} />
+            return <BlogCard key={`blog-post-${index}`} post={post} grid={1} />
           })}
         </div>
         <div className="space-y-10 lg:col-span-1">
