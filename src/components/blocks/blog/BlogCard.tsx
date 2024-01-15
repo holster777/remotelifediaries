@@ -1,6 +1,5 @@
 import ChevronRightIcon from '@/images/ChevronIconRight'
 import { formatDate } from '@/lib/formatDate'
-import { instrumentSerif } from '@/styles/fonts'
 import { ContentData } from '@gocontento/client'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,7 +25,7 @@ export default function BlogCard({ post }: { post: ContentData }) {
             <div className="group relative flex flex-col items-start md:col-span-3">
               <Link href={`/blog/${post.slug}`}>
                 <h3
-                  className={`text-4xl tracking-tight text-zinc-800 dark:text-zinc-100 ${instrumentSerif.className}`}
+                  className={`font-display text-4xl tracking-tight text-zinc-800 dark:text-zinc-100`}
                 >
                   {post.fields.title.text}
                 </h3>
