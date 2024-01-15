@@ -22,7 +22,7 @@ function NavLink({
 
 export function Footer({ footerNav }: { footerNav: ContentData }) {
   return (
-    <footer className="mt-32 flex-none bg-[#3F3C47] dark:bg-[#F2EEE9]">
+    <footer className="mt-32 flex-none bg-[#3F3C47] dark:bg-[#EBFFA3]">
       <ContainerOuter>
         <div className="pb-16 pt-10">
           <ContainerInner>

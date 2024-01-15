@@ -16,8 +16,8 @@ export default function BlogGrid({
   categoryLinks: CategoryLink[] | undefined
 }) {
   return (
-    <Container className="my-9 px-6">
-      <h2 className={`text-5xl font-bold ${instrumentSerif.className}`}>
+    <Container className="px-6 py-16">
+      <h2 className="font-display text-3xl tracking-tight md:text-5xl">
         {block.fields.title.text}
       </h2>
       {block.fields.text.text && <p>{block.fields.text.text}</p>}

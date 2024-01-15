@@ -47,6 +47,12 @@ export default async function RootLayout({
       notFound()
     })
 
+  const announcementBar = await createClient()
+    .getContentById('c_01HM6Xx103G95dYG01yEGk29vr')
+    .catch(() => {
+      notFound()
+    })
+
   return (
     <html
       lang="en"
@@ -56,7 +62,11 @@ export default async function RootLayout({
       <body className="font-paragraph flex h-full bg-[#F2EEE9] dark:bg-[#3F3C47]">
         <Providers>
           <div className="flex w-full">
-            <GeneralLayout mainNav={mainNav} footerNav={footerNav}>
+            <GeneralLayout
+              mainNav={mainNav}
+              footerNav={footerNav}
+              announcementBar={announcementBar}
+            >
               {children}
             </GeneralLayout>
           </div>

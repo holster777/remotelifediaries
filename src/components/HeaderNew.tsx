@@ -99,7 +99,13 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
+export default function HeaderNew({
+  mainNav,
+  announcementBar,
+}: {
+  mainNav: ContentData
+  announcementBar: ContentData
+}) {
   let { resolvedTheme } = useTheme()
   let [mounted, setMounted] = useState(false)
 
@@ -111,7 +117,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
     mounted && (
       <>
         <div className="hidden flex-col md:flex">
-          <AnnouncementBar />
+          <AnnouncementBar announcementBar={announcementBar} />
           <div className="mx-auto flex w-full max-w-2xl items-center justify-between py-9 lg:max-w-7xl lg:px-8 ">
             <nav className="flex flex-1 justify-start">
               <ul className="flex gap-x-12">
@@ -121,6 +127,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
                       <Link
                         key={`nav-item-${index}`}
                         href={item.fields.url.text}
+                        className="border-b-2 border-[#F2EEE9] hover:border-zinc-600 dark:border-[#3F3C47] hover:dark:border-white"
                       >
                         {item.fields.link_text.text}
                       </Link>
@@ -129,7 +136,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
                 )}
               </ul>
             </nav>
-            <div>
+            <Link href="/">
               {resolvedTheme === 'light' ? (
                 <Image
                   src={LogoLight}
@@ -147,7 +154,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
                   height={300}
                 />
               )}
-            </div>
+            </Link>
             <div className="flex justify-end md:flex-1">
               <div className="pointer-events-auto">
                 <ThemeToggle />
@@ -156,7 +163,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
           </div>
         </div>
         <div className="flex flex-col md:hidden">
-          <AnnouncementBar />
+          <AnnouncementBar announcementBar={announcementBar} />
           <Popover className="mt-9 flex items-center justify-between px-6">
             <Popover.Button className="flex flex-1 text-3xl font-bold">
               <IconMenu_hamburger />
@@ -213,7 +220,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
                 </Popover.Panel>
               </Transition.Child>
             </Transition.Root>
-            <div className="flex flex-1 justify-center">
+            <Link href="/" className="flex flex-1 justify-center">
               {resolvedTheme === 'light' ? (
                 <Image
                   src={LogoLight}
@@ -231,7 +238,7 @@ export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
                   height={300}
                 />
               )}
-            </div>
+            </Link>
             <div className="flex flex-1 justify-end">
               <div className="pointer-events-auto">
                 <ThemeToggle />

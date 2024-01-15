@@ -4,8 +4,20 @@ import { ContentData } from '@gocontento/client'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function BlogCard({ post }: { post: ContentData }) {
+export default function BlogCard({
+  post,
+  grid,
+}: {
+  post: ContentData
+  grid: number
+}) {
   const category = post.fields.category.content_links[0].content_link
+
+  let colSpan = 'md:col-span-3'
+
+  if (grid === 2) {
+    colSpan = 'md:col-span-4'
+  }
 
   return (
     <div className="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6 md:space-y-0">
@@ -22,7 +34,9 @@ export default function BlogCard({ post }: { post: ContentData }) {
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
           <article className="md:grid md:grid-cols-4 md:items-baseline">
-            <div className="group relative flex flex-col items-start md:col-span-3">
+            <div
+              className={`group relative flex flex-col items-start ${colSpan}`}
+            >
               <Link href={`/blog/${post.slug}`}>
                 <h3
                   className={`font-display text-4xl tracking-tight text-zinc-800 dark:text-zinc-100`}
@@ -30,9 +44,9 @@ export default function BlogCard({ post }: { post: ContentData }) {
                   {post.fields.title.text}
                 </h3>
               </Link>
-              <p className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-600 dark:text-zinc-200">
+              <p className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-600 dark:text-[#EBFFA3]">
                 {formatDate(post.published_at)}{' '}
-                <span className="px-2 pb-[2px]">|</span>
+                <span className="px-2 pb-[2px] dark:text-[#EBFFA3]">|</span>
                 {category.fields.title.text}
               </p>
 

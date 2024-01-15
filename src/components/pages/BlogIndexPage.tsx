@@ -7,6 +7,7 @@ import { type Metadata } from 'next'
 import { Container } from '../Container'
 import BlogCard from '../blocks/blog/BlogCard'
 import CategoryPills from '../blocks/blog/CategoryPill'
+import Image from 'next/image'
 
 export default function BlogIndexPage({
   initialContent,
@@ -20,20 +21,34 @@ export default function BlogIndexPage({
   const { content } = useLivePreview({ content: initialContent })
 
   return (
-    <Container className="mt-16 sm:mt-32">
-      <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          {content.fields.title.text}
-        </h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: content.fields.text.text }}
-          className="prose mt-4 text-lg dark:prose-invert"
-        />
-        <CategoryPills categoryLinks={categoryLinks} />
+    <Container className="mt-9 px-6 md:px-0">
+      <header>
+        <div className="grid space-x-10 md:grid-cols-2">
+          <div className="hidden h-[400px] bg-white px-4 py-4 md:block">
+            <Image
+              src={content.fields.image.assets[0].asset.url}
+              alt={content.fields.image.assets[0].asset.description}
+              sizes="(min-width: 640px) 18rem, 11rem"
+              className="h-full w-full object-cover"
+              width={176}
+              height={176}
+            />
+          </div>
+          <div className="flex flex-col">
+            <h1 className="font-display text-5xl tracking-tight text-zinc-800 dark:text-zinc-100 md:text-6xl">
+              {content.fields.title.text}
+            </h1>
+            <div
+              dangerouslySetInnerHTML={{ __html: content.fields.text.text }}
+              className="prose my-4 text-lg dark:prose-invert"
+            />
+            <CategoryPills categoryLinks={categoryLinks} />
+          </div>
+        </div>
       </header>
-      <div className="mt-12 space-y-10">
+      <div className="mt-12 grid gap-12 md:mt-20 md:grid-cols-2">
         {posts.map((post, index) => (
-          <BlogCard key={`blog-post-${index}`} post={post} />
+          <BlogCard key={`blog-post-${index}`} post={post} grid={2} />
         ))}
       </div>
     </Container>
