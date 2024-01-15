@@ -2,20 +2,17 @@ import { BlockData } from '@gocontento/client'
 import { Container } from '../Container'
 import Link from 'next/link'
 import ChevronRightIcon from '@/images/ChevronIconRight'
-import { dmSerif, instrumentSerif, marcellus } from '@/styles/fonts'
 
 export default function Hero({ block }: { block: BlockData }) {
   return (
     <Container className="prose mt-16 px-6 dark:prose-invert md:px-0">
       <div className="max-w-2xl">
-        <h1
-          className={`text-4xl tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl ${instrumentSerif.className}`}
-        >
+        <h1 className="font-display text-4xl tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
           {block.fields.title.text}
         </h1>
         <div
           dangerouslySetInnerHTML={{ __html: block.fields.body.text }}
-          className="font-courier text-md mt-4"
+          className="text-md mt-4"
         />
       </div>
       <Link

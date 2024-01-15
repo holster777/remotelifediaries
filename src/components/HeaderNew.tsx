@@ -63,50 +63,57 @@ function ThemeToggle() {
 }
 
 export default function HeaderNew({ mainNav }: { mainNav: ContentData }) {
-  let theme = useTheme()
-  let currentTheme = theme.resolvedTheme
+  let { resolvedTheme } = useTheme()
+  let [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <div className="flex flex-col">
-      <AnnouncementBar />
-      <div className="mx-auto flex w-full items-center justify-between px-28 py-9 ">
-        <nav className="flex flex-1 justify-start">
-          <ul className="flex gap-x-12">
-            {mainNav.fields.nav_links.blocks.map(
-              (item: BlockData, index: number) => {
-                return (
-                  <Link key={`nav-item-${index}`} href={item.fields.url.text}>
-                    {item.fields.link_text.text}
-                  </Link>
-                )
-              },
+    mounted && (
+      <div className="flex flex-col">
+        <AnnouncementBar />
+        <div className="mx-auto flex w-full items-center justify-between px-28 py-9 ">
+          <nav className="flex flex-1 justify-start">
+            <ul className="flex gap-x-12">
+              {mainNav.fields.nav_links.blocks.map(
+                (item: BlockData, index: number) => {
+                  return (
+                    <Link key={`nav-item-${index}`} href={item.fields.url.text}>
+                      {item.fields.link_text.text}
+                    </Link>
+                  )
+                },
+              )}
+            </ul>
+          </nav>
+          <div>
+            {resolvedTheme === 'light' ? (
+              <Image
+                src={LogoLight}
+                alt=""
+                className=""
+                width={200}
+                height={300}
+              />
+            ) : (
+              <Image
+                src={LogoDark}
+                alt=""
+                className=""
+                width={200}
+                height={300}
+              />
             )}
-          </ul>
-        </nav>
-        <div>
-          {currentTheme == 'light' ? (
-            <Image
-              src={LogoLight}
-              alt=""
-              className=""
-              width={200}
-              height={300}
-            />
-          ) : (
-            <Image
-              src={LogoDark}
-              alt=""
-              className=""
-              width={200}
-              height={300}
-            />
-          )}
-        </div>
-        <div className="flex justify-end md:flex-1">
-          <div className="pointer-events-auto">
-            <ThemeToggle />
+          </div>
+          <div className="flex justify-end md:flex-1">
+            <div className="pointer-events-auto">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )
   )
 }

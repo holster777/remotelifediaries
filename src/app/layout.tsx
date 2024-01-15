@@ -4,7 +4,21 @@ import '@/styles/tailwind.css'
 import { GeneralLayout } from '@/components/layouts/GeneralLayout'
 import { createClient } from '@/lib/contento'
 import { notFound } from 'next/navigation'
-import { courier } from '@/styles/fonts'
+import { Courier_Prime } from 'next/font/google'
+import { Instrument_Serif } from 'next/font/google'
+
+const courier = Courier_Prime({
+  variable: '--font-courier-prime',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+})
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: {
@@ -36,10 +50,10 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${courier.className} h-full antialiased`}
+      className={`${courier.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex h-full bg-[#F2EEE9] dark:bg-[#3F3C47]">
+      <body className="font-paragraph flex h-full bg-[#F2EEE9] dark:bg-[#3F3C47]">
         <Providers>
           <div className="flex w-full">
             <GeneralLayout mainNav={mainNav} footerNav={footerNav}>
