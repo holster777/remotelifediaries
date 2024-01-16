@@ -26,9 +26,6 @@ export default function BlogPost({
   initialContent: ContentData
 }) {
   const { content } = useLivePreview({ content: initialContent })
-
-  // const author = content.fields.author.content_links[0]
-  //   .content_link as ContentData;
   const category = content.fields.category.content_links[0].content_link
 
   return (
