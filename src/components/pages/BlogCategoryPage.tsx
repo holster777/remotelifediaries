@@ -22,7 +22,7 @@ export default function BlogCategoryPage({
 
   return (
     <Container className="mt-9 px-6 md:px-0">
-      {TODO - Needs Fixing}
+      {/* TODO - Needs Fixing */}
       {/* <header>
         <div className="grid md:grid-cols-2 md:space-x-10">
           <div className="hidden bg-white px-4 py-4 md:mr-6 md:block">
