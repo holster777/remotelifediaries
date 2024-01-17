@@ -22,7 +22,8 @@ export default function BlogCategoryPage({
 
   return (
     <Container className="mt-9 px-6 md:px-0">
-      <header>
+      {TODO - Needs Fixing}
+      {/* <header>
         <div className="grid md:grid-cols-2 md:space-x-10">
           <div className="hidden bg-white px-4 py-4 md:mr-6 md:block">
             <Image
@@ -45,7 +46,7 @@ export default function BlogCategoryPage({
             <CategoryPills categoryLinks={categoryLinks} />
           </div>
         </div>
-      </header>
+      </header> */}
       <div className="mt-12 grid gap-12 md:mt-20 md:grid-cols-2">
         {posts.map((post, index) => (
           <BlogCard key={`blog-post-${index}`} post={post} grid={2} />
