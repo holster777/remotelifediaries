@@ -23,8 +23,8 @@ export default function BlogIndexPage({
   return (
     <Container className="mt-9 px-6 md:px-0">
       <header>
-        <div className="grid space-x-10 md:grid-cols-2">
-          <div className="hidden h-[400px] bg-white px-4 py-4 md:mr-6 md:block">
+        <div className="grid md:grid-cols-2 md:space-x-10">
+          <div className="hidden bg-white px-4 py-4 md:mr-6 md:block">
             <Image
               src={content.fields.image.assets[0].asset.url}
               alt={content.fields.image.assets[0].asset.description}
@@ -40,7 +40,7 @@ export default function BlogIndexPage({
             </h1>
             <div
               dangerouslySetInnerHTML={{ __html: content.fields.text.text }}
-              className="prose my-4 text-lg dark:prose-invert"
+              className="prose my-4 text-lg dark:prose-invert dark:text-zinc-300"
             />
             <CategoryPills categoryLinks={categoryLinks} />
           </div>

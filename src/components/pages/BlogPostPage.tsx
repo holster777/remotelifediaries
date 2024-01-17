@@ -52,13 +52,13 @@ export default function BlogPost({
                 />
               </div>
               <header className="col-span-2 flex flex-col">
-                <h1 className="font-display mb-6 mt-6 text-3xl tracking-tight text-zinc-800 dark:text-zinc-100 md:text-5xl">
+                <h1 className="mb-6 mt-6 font-display text-3xl tracking-tight text-zinc-800 dark:text-zinc-100 md:text-5xl">
                   {content.fields.title.text}
                 </h1>
                 <div className="order-first flex space-x-10">
                   <time
                     dateTime={content.published_at}
-                    className="flex items-center text-base text-zinc-600 dark:text-zinc-500"
+                    className="flex items-center text-base text-zinc-600 dark:text-[#EBFFA3] "
                   >
                     <span>{formatDate(content.published_at)}</span>
                   </time>

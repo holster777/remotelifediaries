@@ -8,6 +8,7 @@ import BlogGrid from './blocks/blog/BlogGrid'
 import { CategoryLink } from '@/types'
 import HeroWithImage from './blocks/HeroWithImage'
 import Trips from './blocks/trips/Trips'
+import ThreeColumnGrid from './blocks/ThreeColumnGrid'
 
 export default function BlockMatcher({
   blocks,
@@ -43,6 +44,9 @@ export default function BlockMatcher({
 
       case 'trips':
         return <Trips key={id + '-' + index} block={block} />
+
+      case 'three_column_grid':
+        return <ThreeColumnGrid key={id + '-' + index} block={block} />
 
       default:
         return (

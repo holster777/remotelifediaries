@@ -4,8 +4,8 @@ import AnnouncementBar from './AnnouncementBar'
 import { useTheme } from 'next-themes'
 import { Fragment, useEffect, useState } from 'react'
 import Image from 'next/image'
-import LogoLight from '@/images/RLD-Logo-Black.png'
-import LogoDark from '@/images/RLD-Logo-White.png'
+import LogoLight from '@/images/logos/RLD-Simple-Logo-Black.png'
+import LogoDark from '@/images/logos/RLD-Simple-Logo-White.png'
 import { Popover, Transition } from '@headlessui/react'
 
 function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

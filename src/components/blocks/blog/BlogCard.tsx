@@ -21,7 +21,10 @@ export default function BlogCard({
 
   return (
     <div className="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6 md:space-y-0">
-      <div className="h-72 w-full flex-shrink-0 bg-white p-3 dark:bg-white md:h-44 md:w-44">
+      <Link
+        href={`/blog/${post.slug}`}
+        className="h-72 w-full flex-shrink-0 bg-white p-3 dark:bg-white md:h-44 md:w-44"
+      >
         <Image
           src={post.fields.image.assets[0].asset.url}
           alt=""
@@ -29,9 +32,9 @@ export default function BlogCard({
           width={100}
           height={100}
         />
-      </div>
+      </Link>
 
-      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div className="md:pl-6">
         <div className="flex max-w-3xl flex-col space-y-16">
           <article className="md:grid md:grid-cols-4 md:items-baseline">
             <div
@@ -50,7 +53,7 @@ export default function BlogCard({
                 {category.fields.title.text}
               </p>
 
-              <p className="relative z-10 mt-2 line-clamp-3 text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="relative z-10 mt-2 line-clamp-3 text-sm text-zinc-600 dark:text-zinc-300">
                 {post.fields.description.text}
               </p>
               <Link
