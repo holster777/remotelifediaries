@@ -20,16 +20,6 @@ const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s - Spencer Sharp',
-    default:
-      'Spencer Sharp - Software designer, founder, and amateur astronaut',
-  },
-  description:
-    'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
-}
-
 export default async function RootLayout({
   children,
 }: {
@@ -59,7 +49,7 @@ export default async function RootLayout({
       className={`${courier.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="font-paragraph flex h-full bg-[#F2EEE9] dark:bg-[#3F3C47]">
+      <body className="flex h-full bg-[#F2EEE9] font-paragraph dark:bg-[#3F3C47]">
         <Providers>
           <div className="flex w-full">
             <GeneralLayout
