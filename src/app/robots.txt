@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.remotelifediaries.com
+
+# Sitemaps
+Sitemap: https://www.remotelifediaries.com/sitemap.xml

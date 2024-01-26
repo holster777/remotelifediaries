@@ -1,4 +1,9 @@
-import { createClient, generateSeo } from '@/lib/contento'
+import {
+  createClient,
+  generateSeo,
+  getBlogCategoryLinks,
+  getBlogPosts,
+} from '@/lib/contento'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
@@ -51,5 +56,15 @@ export default async function page({ params }: Props) {
       notFound()
     })
 
-  return <GeneralPage initialContent={content} />
+  const posts = await getBlogPosts()
+
+  const categoryLinks = await getBlogCategoryLinks()
+
+  return (
+    <GeneralPage
+      initialContent={content}
+      posts={posts}
+      categoryLinks={categoryLinks}
+    />
+  )
 }

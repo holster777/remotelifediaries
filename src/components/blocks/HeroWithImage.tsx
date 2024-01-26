@@ -7,7 +7,7 @@ export default function HeroWithImage({ block }: { block: BlockData }) {
     <Container className="mb-16 px-6 dark:prose-invert md:mt-7 md:px-0">
       <div className="grid flex-auto md:grid-cols-2 md:space-x-16">
         <div className="prose pr-6 dark:prose-invert md:mt-0">
-          <h1 className="mt-0 font-display text-4xl tracking-tight text-zinc-800 dark:text-zinc-100 md:text-5xl ">
+          <h1 className="mt-0 font-display text-4xl font-normal tracking-tight text-zinc-800 dark:text-zinc-100 md:text-5xl ">
             {block.fields.title.text}
           </h1>
           <div

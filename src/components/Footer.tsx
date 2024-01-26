@@ -42,8 +42,8 @@ export function Footer({ footerNav }: { footerNav: ContentData }) {
                 )}
               </div>
               <p className="text-sm text-white dark:text-black">
-                &copy; {new Date().getFullYear()} Remote Dev Diaries. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} Remote Life Diaries. All
+                rights reserved.
               </p>
             </div>
           </ContainerInner>

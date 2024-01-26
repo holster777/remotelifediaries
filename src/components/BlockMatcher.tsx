@@ -9,6 +9,7 @@ import { CategoryLink } from '@/types'
 import HeroWithImage from './blocks/HeroWithImage'
 import Trips from './blocks/trips/Trips'
 import ThreeColumnGrid from './blocks/ThreeColumnGrid'
+import FormSection from './forms/FormSection'
 
 export default function BlockMatcher({
   blocks,
@@ -47,6 +48,9 @@ export default function BlockMatcher({
 
       case 'three_column_grid':
         return <ThreeColumnGrid key={id + '-' + index} block={block} />
+
+      case 'form_section':
+        return <FormSection key={id + '-' + index} block={block} />
 
       default:
         return (
